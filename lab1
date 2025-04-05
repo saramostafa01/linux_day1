@@ -1,0 +1,190 @@
+ubuntu@brainy-macaque:/$ mkdir dir1
+ubuntu@brainy-macaque:~$ cd dir1
+ubuntu@brainy-macaque:~/dir1$ mkdir dir11
+ubuntu@brainy-macaque:~/dir1$ mkdir dir12
+ubuntu@brainy-macaque:~/dir1$ cd dir11
+ubuntu@brainy-macaque:~/dir1/dir11$ touch file1
+ubuntu@brainy-macaque:~/dir1/dir11$ cd ..
+ubuntu@brainy-macaque:~/dir1$ cd ..
+ubuntu@brainy-macaque:~$ mkdir docs
+ubuntu@brainy-macaque:~$ cd docs
+ubuntu@brainy-macaque:~/docs$ touch mycv
+ubuntu@brainy-macaque:~/docs$ cd ..
+ubuntu@brainy-macaque:~$ rm -r dir11
+rm: cannot remove 'dir11': No such file or directory
+ubuntu@brainy-macaque:~$ cd dir1
+ubuntu@brainy-macaque:~/dir1$ rm -r dir11
+ubuntu@brainy-macaque:~/dir1$ cd dir11
+-bash: cd: dir11: No such file or directory
+ubuntu@brainy-macaque:~/dir1$ rmdir dir12
+ubuntu@brainy-macaque:~/dir1$ cd dir12
+-bash: cd: dir12: No such file or directory
+ubuntu@brainy-macaque:~/dir1$ cd ..
+ubuntu@brainy-macaque:~$ 
+ubuntu@brainy-macaque:~$ pwd
+/home/ubuntu
+ubuntu@brainy-macaque:~$ cd docs
+ubuntu@brainy-macaque:~/docs$ pwd
+/home/ubuntu/docs
+ubuntu@brainy-macaque:~/docs$ cd mycv
+-bash: cd: mycv: Not a directory
+ubuntu@brainy-macaque:~/docs$ readlink -f mycv
+/home/ubuntu/docs/mycv
+ubuntu@brainy-macaque:~/docs$ /etc/passwd
+-bash: /etc/passwd: Permission denied
+ubuntu@brainy-macaque:~/docs$ cd etc
+-bash: cd: etc: No such file or directory
+ubuntu@brainy-macaque:~/docs$ cd /etc
+ubuntu@brainy-macaque:/etc$ cd /passwd
+-bash: cd: /passwd: No such file or directory
+ubuntu@brainy-macaque:/etc$ cp passwd mypasswd
+cp: cannot create regular file 'mypasswd': Permission denied
+ubuntu@brainy-macaque:/etc$ sudo cp passwd mypasswd
+ubuntu@brainy-macaque:/etc$ ls |grep mypasswd
+mypasswd
+ubuntu@brainy-macaque:/etc$ cd ..
+ubuntu@brainy-macaque:/$ cd /etc
+ubuntu@brainy-macaque:/etc$ sudo mv mypasswd oldpasswd
+ubuntu@brainy-macaque:/etc$ ls |grep oldpasswd
+oldpasswd
+ubuntu@brainy-macaque:/etc$ cd ..
+ubuntu@brainy-macaque:/$ cd /usr/bin
+ubuntu@brainy-macaque:/usr/bin$ cd ..
+ubuntu@brainy-macaque:/usr$ cd ..
+ubuntu@brainy-macaque:/$ cd /usr/bin 
+ubuntu@brainy-macaque:/usr/bin$ ls |grep ^[w]
+w
+wall
+watch
+watchgnupg
+wc
+wdctl
+wget
+whatis
+whereis
+which
+which.debianutils
+whiptail
+who
+whoami
+wifi-status
+write
+ubuntu@brainy-macaque:/usr/bin$ cd ..
+ubuntu@brainy-macaque:/usr$ cd ..
+ubuntu@brainy-macaque:/$ cd /etc/passwd
+-bash: cd: /etc/passwd: Not a directory
+ubuntu@brainy-macaque:/$ head -5 /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+ubuntu@brainy-macaque:/$ tail -7 /etc/passwd
+sshd:x:105:65534::/run/sshd:/usr/sbin/nologin
+pollinate:x:106:1::/var/cache/pollinate:/bin/false
+tcpdump:x:107:108::/nonexistent:/usr/sbin/nologin
+landscape:x:108:109::/var/lib/landscape:/usr/sbin/nologin
+fwupd-refresh:x:990:990:Firmware update daemon:/var/lib/fwupd:/usr/sbin/nologin
+polkitd:x:989:989:User for polkitd:/:/usr/sbin/nologin
+ubuntu:x:1000:1000:Ubuntu:/home/ubuntu:/bin/bash
+ubuntu@brainy-macaque:/$ man passwd
+ubuntu@brainy-macaque:/$ man 5 passwd
+ubuntu@brainy-macaque:/$ man -k passwd
+chgpasswd (8)        - update group passwords in batch mode
+chpasswd (8)         - update passwords in batch mode
+fgetpwent_r (3)      - get passwd file entry reentrantly
+getpwent_r (3)       - get passwd file entry reentrantly
+gpasswd (1)          - administer /etc/group and /etc/gshadow
+grub-mkpasswd-pbkdf2 (1) - generate hashed password for GRUB
+openssl-passwd (1ssl) - compute password hashes
+pam_localuser (8)    - require users to be listed in /etc/passwd
+passwd (1)           - change user password
+passwd (1ssl)        - OpenSSL application commands
+passwd (5)           - the password file
+passwd2des (3)       - RFS password encryption
+pwhistory_helper (8) - Helper binary that transfers password hashes from passwd or shadow to opasswd
+update-passwd (8)    - safely update /etc/passwd, /etc/shadow and /etc/group
+ubuntu@brainy-macaque:/$ vi mycv
+
+[No write since last change]
+/bin/bash: line 1: q: command not found
+
+shell returned 127
+
+Press ENTER or type command to continue
+ubuntu@brainy-macaque:/$ 
+ubuntu@brainy-macaque:/$ vi mycv
+ubuntu@brainy-macaque:/$ ci mycv.txt
+Command 'ci' not found, but can be installed with:
+sudo apt install rcs
+ubuntu@brainy-macaque:/$ vi mycv.txt
+ubuntu@brainy-macaque:/$ vi mycv.txt
+ubuntu@brainy-macaque:/$ vi mycv.txt
+ubuntu@brainy-macaque:/$ sudo vi mycv
+ubuntu@brainy-macaque:/$ sudo vi mycv
+ubuntu@brainy-macaque:/$ sudo vi mycv
+
+[No write since last change]
+No manual entry for 1
+(Alternatively, what manual page do you want from section 1?)
+For example, try 'man man'.
+
+shell returned 1
+
+Press ENTER or type command to continue
+[No write since last change]
+No manual entry for 1
+(Alternatively, what manual page do you want from section 1?)
+For example, try 'man man'.
+
+shell returned 1
+
+Press ENTER or type command to continue
+[No write since last change]
+No manual entry for 1
+(Alternatively, what manual page do you want from section 1?)
+For example, try 'man man'.
+
+
+shell returned 1
+
+Press ENTER or type command to continue
+[No write since last change]
+No manual entry for 1
+(Alternatively, what manual page do you want from section 1?)
+For example, try 'man man'.
+
+shell returned 1
+
+Press ENTER or type command to continue
+[No write since last change]
+No manual entry for Shams
+
+shell returned 16
+
+Press ENTER or type command to continue
+[No write since last change]
+No manual entry for Shams
+
+shell returned 16
+
+Press ENTER or type command to continue
+ubuntu@brainy-macaque:/$ /etc/shells
+-bash: /etc/shells: Permission denied
+ubuntu@brainy-macaque:/$ sudo /etc/shells
+sudo: /etc/shells: command not found
+ubuntu@brainy-macaque:/$ cat /ect/shells
+cat: /ect/shells: No such file or directory
+ubuntu@brainy-macaque:/$ cat /etc/shells
+# /etc/shells: valid login shells
+/bin/sh
+/usr/bin/sh
+/bin/bash
+/usr/bin/bash
+/bin/rbash
+/usr/bin/rbash
+/usr/bin/dash
+/usr/bin/screen
+/usr/bin/tmux
+
+ubuntu@brainy-macaque:/$ 
