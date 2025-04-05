@@ -171,10 +171,6 @@ shell returned 16
 Press ENTER or type command to continue
 ubuntu@brainy-macaque:/$ /etc/shells
 -bash: /etc/shells: Permission denied
-ubuntu@brainy-macaque:/$ sudo /etc/shells
-sudo: /etc/shells: command not found
-ubuntu@brainy-macaque:/$ cat /ect/shells
-cat: /ect/shells: No such file or directory
 ubuntu@brainy-macaque:/$ cat /etc/shells
 # /etc/shells: valid login shells
 /bin/sh
